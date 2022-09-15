@@ -1,0 +1,15 @@
+{
+  "name": "beats",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "sass --watch ./scss/main.scss ./css/main.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "sass": "^1.54.9"
+  }
+}

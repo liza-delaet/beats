@@ -1,0 +1,10 @@
+@import '../node_modules/normalize.css/normalize.css';
+@import './vars.scss';
+@import './settings/media.scss';
+@import './settings/fonts.scss';
+@import './settings/base.scss';
+
+//components//
+
+@import './components/wrapper.scss';
+@import './components/header.scss';
