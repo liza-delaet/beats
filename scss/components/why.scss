@@ -1,0 +1,23 @@
+.why {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-why {
+  position: relative;
+
+  &::before {
+    content: url(../../pictures/bg/elemred.svg);
+    position: absolute;
+    bottom: -25px;
+    left: 10%;
+  }
+}
+
+.why__title {
+  margin-bottom: 18px;
+}
+
+.why__subtitle {
+  padding: 0 25%;
+}

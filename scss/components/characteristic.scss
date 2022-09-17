@@ -1,0 +1,13 @@
+.characteristic {
+  display: flex;
+
+  &__icon {
+  width: 40px;
+  margin-right: 12px;
+  }
+
+  &__text {
+    max-width: 90px;
+  }
+}
+

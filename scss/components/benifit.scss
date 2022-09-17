@@ -1,0 +1,29 @@
+.benifit {
+  text-align: center;
+
+  &__image-wrapper {
+    display: inline-block;
+    width: 128px;
+    height: 128px;
+    position: relative;
+    background: #F2F5F4;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+}
+
+.benefit__icon {
+  width: 68px;
+  height: 68px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.benifit__title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}

@@ -1,0 +1,29 @@
+.benefits {
+  display: flex;
+
+  &__item {
+    flex: 1;
+    padding: 0 5%;
+    position: relative;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+.benefits__item::before {
+  content: url(../../pictures/bg/Combined.svg);
+  position: absolute;
+  top: 30px;
+  right: 0;
+  transform: translateX(50%);
+}
