@@ -413,8 +413,9 @@ p {
   flex-wrap: wrap;
   margin-bottom: 15px;
 }
-.form__controls:last-child {
-  margin-bottom: 35px;
+
+.form__buttons {
+  margin-top: 40px;
 }
 
 .radio {
