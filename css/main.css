@@ -104,7 +104,7 @@ p {
   position: relative;
 }
 .presentation::before {
-  content: url(../../pictures/bg/elemgrey.svg);
+  content: url(../pictures/bg/elemgrey.svg);
   position: absolute;
   bottom: -25px;
   right: 15%;
