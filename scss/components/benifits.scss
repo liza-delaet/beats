@@ -6,6 +6,10 @@
     padding: 0 5%;
     position: relative;
 
+    @include tablets {
+      padding: 0 1%;
+    }
+
     &:first-child {
       padding-left: 0;
     }
@@ -26,4 +30,7 @@
   top: 30px;
   right: 0;
   transform: translateX(50%);
+  @include tablets {
+    display: none;
+  }
 }

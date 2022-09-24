@@ -20,4 +20,7 @@
 
 .why__subtitle {
   padding: 0 25%;
+  @include tablets {
+    padding: 0 15%;
+  }
 }

@@ -1,8 +1,20 @@
+html {
+  font-size: $baseFontSize;
+
+  @include tablets {
+    font-size: $baseFontSize - 1px;
+  }
+
+  @include phones {
+    font-size: $baseFontSize - 2px;
+  }
+}
+
+
 body {
   background: #fff;
   color: #666666;
   font-family: 'Play', Helvetica sans-serif; 
-  font-size: 16px;
   line-height: 1.42;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -43,7 +55,9 @@ p {
 }
 
 .container {
-  width: 1100px;
+  max-width: 1100px;
+  width: 95%;
   margin: 0 auto;
   position: relative;
 }
+

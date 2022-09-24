@@ -1,6 +1,16 @@
+.navigation {
+  margin: 0 30px;
+  padding-top: 5px;
+  @include tablets {
+    display: none;
+  }
+}
+
 .navigation__list {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .navigation__item {
@@ -9,5 +19,9 @@
   &:last-child {
     margin-right: 0;
   }
+}
+
+.navigation__link {
+  white-space: nowrap;
 }
 

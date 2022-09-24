@@ -19,10 +19,28 @@
     height: 100%;
     padding: 24px 0 50px;
     background: url(../pictures/bg/beats.svg) right center / 50% auto no-repeat;
+
+    @include tablets {
+      background: none;
+    }
   }
 
   &__title-section {
     width: 40%;
+
+    @include tablets {
+      width: 100%;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      &::before{
+        content: url(../pictures/bg/beats2.png);
+        margin-bottom: 50px;
+      }
+    }
   }
 
   &__title {
@@ -31,11 +49,26 @@
     font-weight: bold;
     margin-bottom: 20px;
     text-transform: uppercase;
+
+    @include tablets {
+      padding: 0 5%;
+      margin-bottom: 0;
+    }
   }
 
   &__subtitle {
     font-size: 21px;
     margin-bottom: 35px;
     padding-right: 10%;
+
+    @include tablets {
+      padding: 0 20%;
+    }
+  }
+}
+
+.presentation__icon-section {
+  @include tablets {
+    display: none;
   }
 }

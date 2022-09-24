@@ -309,11 +309,24 @@ template {
   display: none;
 }
 
+html {
+  font-size: 16px;
+}
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+}
+
 body {
   background: #fff;
   color: #666666;
   font-family: "Play", Helvetica sans-serif;
-  font-size: 16px;
   line-height: 1.42;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -354,7 +367,8 @@ p {
 }
 
 .container {
-  width: 1100px;
+  max-width: 1100px;
+  width: 95%;
   margin: 0 auto;
   position: relative;
 }
@@ -362,13 +376,55 @@ p {
 .header {
   font-size: 18px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+}
+
+.header__contacts-phone {
+  padding-top: 5px;
+}
+@media screen and (max-width: 768px) {
+  .header__contacts-phone {
+    display: none;
+  }
+}
+
+.hamburger {
+  width: 26px;
+  height: 24px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: inline-flex;
+  }
+}
+
+.hamburger__plank {
+  display: block;
+  background: #292929;
+  height: 4px;
+  border-radius: 10px;
+}
+
+.navigation {
+  margin: 0 30px;
+  padding-top: 5px;
+}
+@media screen and (max-width: 768px) {
+  .navigation {
+    display: none;
+  }
 }
 
 .navigation__list {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .navigation__item {
@@ -376,6 +432,10 @@ p {
 }
 .navigation__item:last-child {
   margin-right: 0;
+}
+
+.navigation__link {
+  white-space: nowrap;
 }
 
 .contacts__phone {
@@ -387,6 +447,14 @@ p {
   width: 14px;
   height: 14px;
   margin-right: 6px;
+}
+
+.contacts-phone__text {
+  white-space: nowrap;
+}
+
+.contacts-phone__icon--elem {
+  flex-shrink: 0;
 }
 
 .section {
@@ -425,8 +493,28 @@ p {
   padding: 24px 0 50px;
   background: url(../pictures/bg/beats.svg) right center/50% auto no-repeat;
 }
+@media screen and (max-width: 768px) {
+  .presentation__container {
+    background: none;
+  }
+}
 .presentation__title-section {
   width: 40%;
+}
+@media screen and (max-width: 768px) {
+  .presentation__title-section {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .presentation__title-section::before {
+    content: url(../pictures/bg/beats2.png);
+    margin-bottom: 50px;
+  }
 }
 .presentation__title {
   font-size: 48px;
@@ -435,15 +523,32 @@ p {
   margin-bottom: 20px;
   text-transform: uppercase;
 }
+@media screen and (max-width: 768px) {
+  .presentation__title {
+    padding: 0 5%;
+    margin-bottom: 0;
+  }
+}
 .presentation__subtitle {
   font-size: 21px;
   margin-bottom: 35px;
   padding-right: 10%;
 }
+@media screen and (max-width: 768px) {
+  .presentation__subtitle {
+    padding: 0 20%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .presentation__icon-section {
+    display: none;
+  }
+}
 
 .button {
   font-weight: bold;
-  padding: 18px 41px;
+  padding: 1.125rem 2.5625rem;
   text-transform: uppercase;
   border-radius: 100px;
   line-height: 1;
@@ -457,6 +562,10 @@ p {
 .button--transparent {
   background: transparent;
   text-transform: none;
+}
+.button--transparent:hover {
+  color: #E01F3D;
+  transition: 0.5s;
 }
 
 .characteristics {
@@ -504,6 +613,11 @@ p {
 .why__subtitle {
   padding: 0 25%;
 }
+@media screen and (max-width: 768px) {
+  .why__subtitle {
+    padding: 0 15%;
+  }
+}
 
 .benefits {
   display: flex;
@@ -512,6 +626,11 @@ p {
   flex: 1;
   padding: 0 5%;
   position: relative;
+}
+@media screen and (max-width: 768px) {
+  .benefits__item {
+    padding: 0 1%;
+  }
 }
 .benefits__item:first-child {
   padding-left: 0;
@@ -529,6 +648,11 @@ p {
   top: 30px;
   right: 0;
   transform: translateX(50%);
+}
+@media screen and (max-width: 768px) {
+  .benefits__item::before {
+    display: none;
+  }
 }
 
 .benifit {
@@ -570,6 +694,13 @@ p {
 .reviews__display-inner {
   display: flex;
 }
+@media screen and (max-width: 768px) {
+  .reviews__display-inner {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}
 .reviews__display::before {
   content: "";
   display: block;
@@ -587,6 +718,12 @@ p {
   height: 264px;
   width: 253px;
 }
+@media screen and (max-width: 768px) {
+  .reviews__avatar {
+    height: 130px;
+    width: 130px;
+  }
+}
 .reviews__avatar__img {
   object-fit: cover;
   width: 100%;
@@ -596,6 +733,11 @@ p {
 .reviews__content {
   width: 50%;
   padding-left: 40px;
+}
+@media screen and (max-width: 768px) {
+  .reviews__content {
+    width: 90%;
+  }
 }
 
 .reviews__title {
@@ -676,10 +818,21 @@ p {
 .form {
   display: flex;
 }
+@media screen and (max-width: 768px) {
+  .form {
+    flex-direction: column;
+    padding: 0 17%;
+  }
+}
 
 .form__col {
   flex: 1;
   margin-right: 27px;
+}
+@media screen and (max-width: 768px) {
+  .form__col {
+    margin-right: 0;
+  }
 }
 .form__col:last-child {
   margin-right: 0;
@@ -705,6 +858,11 @@ p {
   border: 3px solid transparent;
   border-radius: 4px;
 }
+@media screen and (max-width: 768px) {
+  .form__input {
+    padding: 5px 5px;
+  }
+}
 .form__input:focus {
   border-color: #E01F3D;
   outline: none;
@@ -715,6 +873,11 @@ p {
   resize: none;
   margin-bottom: 25px;
 }
+@media screen and (max-width: 768px) {
+  .form__input--textarea {
+    height: 82px;
+  }
+}
 
 .form__controls {
   display: flex;
@@ -724,6 +887,12 @@ p {
 
 .form__buttons {
   margin-top: 40px;
+}
+@media screen and (max-width: 768px) {
+  .form__buttons {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .radio {
@@ -773,6 +942,11 @@ p {
   top: 25%;
   right: 3%;
   z-index: 100;
+}
+@media screen and (max-width: 768px) {
+  .fixed-menu {
+    display: none;
+  }
 }
 
 .fixed-menu__item {

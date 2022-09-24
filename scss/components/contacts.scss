@@ -9,3 +9,11 @@
     margin-right: 6px;
   }
 }
+
+.contacts-phone__text {
+  white-space: nowrap;
+}
+
+.contacts-phone__icon--elem {
+  flex-shrink: 0;
+}

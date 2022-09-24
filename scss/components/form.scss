@@ -1,10 +1,19 @@
 .form {
   display: flex;
+
+  @include tablets {
+    flex-direction: column;
+    padding: 0 17%;
+  }
 }
 
 .form__col {
   flex: 1;
   margin-right: 27px;
+
+  @include tablets {
+    margin-right: 0;
+  }
 
   &:last-child {
     margin-right: 0;
@@ -32,6 +41,10 @@
   border: 3px solid transparent;
   border-radius: 4px;
 
+  @include tablets {
+    padding: 5px 5px;
+  }
+
   &:focus {
     border-color: #E01F3D;
     outline: none;
@@ -42,6 +55,10 @@
   height: 152px;
   resize: none;
   margin-bottom: 25px;
+
+  @include tablets {
+    height: 82px;
+  }
 }
 
 .form__controls {
@@ -52,4 +69,9 @@
 
 .form__buttons {
   margin-top: 40px;
+  
+  @include tablets {
+    display: flex;
+    justify-content: center;
+  }
 }

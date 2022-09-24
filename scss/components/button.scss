@@ -1,6 +1,6 @@
 .button {
   font-weight: bold;
-  padding: 18px 41px;
+  padding: rem(18px) rem(41px);
   text-transform: uppercase;
   border-radius: 100px;
   line-height: 1;
@@ -15,6 +15,11 @@
   &--transparent {
     background: transparent;
     text-transform: none;
+
+    &:hover {
+      color: #E01F3D;
+      transition: 0.5s;
+    }
   }
 }
 

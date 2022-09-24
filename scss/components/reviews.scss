@@ -7,6 +7,12 @@
 
   &-inner {
     display: flex;
+
+    @include tablets {
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+    }
   }
 
   &::before {
@@ -27,6 +33,11 @@
   height: 264px;
   width: 253px;
 
+  @include tablets {
+    height: 130px;
+    width: 130px;
+  }
+
   &__img {
     object-fit: cover;
     width: 100%;
@@ -35,7 +46,11 @@
 }
 
 .reviews__content {
-  width: 50%       ;
+  width: 50%;
+
+  @include tablets {
+    width: 90%;
+  }
   padding-left: 40px;
 }
 

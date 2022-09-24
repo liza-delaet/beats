@@ -1,3 +1,14 @@
+//breakpoints//
+
+$tablets: 768px;
+$phones: 480px;
+
+//base//
+
+$baseFontSize: 16px;
+
+@import './components/media.scss';
+
 @import './settings/normalize.scss';
 @import './vars.scss';
 @import './settings/media.scss';
@@ -8,6 +19,7 @@
 
 @import './components/wrapper.scss';
 @import './components/header.scss';
+@import './components/hamburger.scss';
 @import './components/logo.scss';
 @import './components/navigation.scss';
 @import './components/contacts.scss';
@@ -26,4 +38,5 @@
 @import './components/form.scss';
 @import './components/radio.scss';
 @import './components/fixed-menu.scss';
+
 
