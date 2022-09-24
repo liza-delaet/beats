@@ -20,7 +20,12 @@
 
 .why__subtitle {
   padding: 0 25%;
+
   @include tablets {
     padding: 0 15%;
+  }
+
+  @include phones {
+    padding: 0 5%;
   }
 }

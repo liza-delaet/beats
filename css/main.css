@@ -465,7 +465,7 @@ p {
   justify-content: center;
 }
 .section__title {
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 40px;
@@ -517,7 +517,7 @@ p {
   }
 }
 .presentation__title {
-  font-size: 48px;
+  font-size: 3rem;
   line-height: 1.1;
   font-weight: bold;
   margin-bottom: 20px;
@@ -530,13 +530,18 @@ p {
   }
 }
 .presentation__subtitle {
-  font-size: 21px;
-  margin-bottom: 35px;
+  font-size: 1.3125rem;
+  margin-bottom: 2.1875rem;
   padding-right: 10%;
 }
 @media screen and (max-width: 768px) {
   .presentation__subtitle {
     padding: 0 20%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .presentation__subtitle {
+    padding: 0 11%;
   }
 }
 
@@ -618,14 +623,29 @@ p {
     padding: 0 15%;
   }
 }
+@media screen and (max-width: 480px) {
+  .why__subtitle {
+    padding: 0 5%;
+  }
+}
 
 .benefits {
   display: flex;
+}
+@media screen and (max-width: 480px) {
+  .benefits {
+    flex-direction: column;
+  }
 }
 .benefits__item {
   flex: 1;
   padding: 0 5%;
   position: relative;
+}
+@media screen and (max-width: 480px) {
+  .benefits__item {
+    padding: 0;
+  }
 }
 @media screen and (max-width: 768px) {
   .benefits__item {
@@ -658,6 +678,12 @@ p {
 .benifit {
   text-align: center;
 }
+@media screen and (max-width: 480px) {
+  .benifit {
+    display: flex;
+    text-align: left;
+  }
+}
 .benifit__image-wrapper {
   display: inline-block;
   width: 128px;
@@ -682,6 +708,12 @@ p {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 8px;
+}
+
+@media screen and (max-width: 480px) {
+  .benefit__image {
+    margin-right: 4%;
+  }
 }
 
 .reviews__display {
@@ -715,13 +747,13 @@ p {
 }
 
 .reviews__avatar {
-  height: 264px;
-  width: 253px;
+  height: 16.5rem;
+  width: 15.8125rem;
 }
 @media screen and (max-width: 768px) {
   .reviews__avatar {
-    height: 130px;
-    width: 130px;
+    height: 8.125rem;
+    width: 8.125rem;
   }
 }
 .reviews__avatar__img {
@@ -824,6 +856,11 @@ p {
     padding: 0 17%;
   }
 }
+@media screen and (max-width: 480px) {
+  .form {
+    padding: 0;
+  }
+}
 
 .form__col {
   flex: 1;
@@ -884,6 +921,11 @@ p {
   flex-wrap: wrap;
   margin-bottom: 15px;
 }
+@media screen and (max-width: 480px) {
+  .form__controls {
+    justify-content: center;
+  }
+}
 
 .form__buttons {
   margin-top: 40px;
@@ -900,6 +942,11 @@ p {
   cursor: pointer;
   user-select: none;
   margin-right: 15px;
+}
+@media screen and (max-width: 480px) {
+  .radio {
+    margin-bottom: 0.625rem;
+  }
 }
 
 .radio--checkbox .radio__visible {
@@ -935,6 +982,39 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.map {
+  position: relative;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.25rem 3%;
+}
+
+.footer__content {
+  display: flex;
+  white-space: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (max-width: 480px) {
+  .footer__content {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer__col--left {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .fixed-menu {

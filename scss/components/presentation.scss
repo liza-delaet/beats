@@ -44,7 +44,7 @@
   }
 
   &__title {
-    font-size: 48px;
+    font-size: rem(48px);
     line-height: 1.1;
     font-weight: bold;
     margin-bottom: 20px;
@@ -57,12 +57,16 @@
   }
 
   &__subtitle {
-    font-size: 21px;
-    margin-bottom: 35px;
+    font-size: rem(21px);
+    margin-bottom: rem(35px);
     padding-right: 10%;
 
     @include tablets {
       padding: 0 20%;
+    }
+
+    @include phones {
+      padding: 0 11%;
     }
   }
 }

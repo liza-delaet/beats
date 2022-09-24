@@ -30,12 +30,12 @@
 }
 
 .reviews__avatar {
-  height: 264px;
-  width: 253px;
+  height: rem(264px);
+  width: rem(253px);
 
   @include tablets {
-    height: 130px;
-    width: 130px;
+    height: rem(130px);
+    width: rem(130px);
   }
 
   &__img {
