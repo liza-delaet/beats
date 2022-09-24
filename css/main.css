@@ -567,10 +567,10 @@ p {
 .button--transparent {
   background: transparent;
   text-transform: none;
+  transition: 0.5s;
 }
 .button--transparent:hover {
   color: #E01F3D;
-  transition: 0.5s;
 }
 
 .characteristics {
@@ -989,11 +989,7 @@ p {
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 1.25rem 3%;
+  padding: 0 3%;
 }
 
 .footer__content {
@@ -1015,6 +1011,25 @@ p {
     flex-direction: column;
     align-items: center;
   }
+}
+
+.social {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.social__item {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.social__icon {
+  fill: #B3B3B3;
+  transition: 0.5s;
+}
+.social__icon:hover {
+  fill: #000;
 }
 
 .fixed-menu {

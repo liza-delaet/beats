@@ -15,10 +15,10 @@
   &--transparent {
     background: transparent;
     text-transform: none;
+    transition: 0.5s;
 
     &:hover {
       color: #E01F3D;
-      transition: 0.5s;
     }
   }
 }
