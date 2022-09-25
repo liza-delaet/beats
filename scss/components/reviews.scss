@@ -36,6 +36,7 @@
   @include tablets {
     height: rem(130px);
     width: rem(130px);
+    margin: 0 auto 30px;
   }
 
   &__img {
@@ -47,11 +48,13 @@
 
 .reviews__content {
   width: 50%;
+  padding-left: 40px;
 
   @include tablets {
     width: 90%;
+    padding: 0;
+    
   }
-  padding-left: 40px;
 }
 
 .reviews__title {

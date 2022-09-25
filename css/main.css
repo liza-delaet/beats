@@ -754,6 +754,7 @@ p {
   .reviews__avatar {
     height: 8.125rem;
     width: 8.125rem;
+    margin: 0 auto 30px;
   }
 }
 .reviews__avatar__img {
@@ -769,6 +770,7 @@ p {
 @media screen and (max-width: 768px) {
   .reviews__content {
     width: 90%;
+    padding: 0;
   }
 }
 
@@ -985,7 +987,8 @@ p {
 }
 
 .map {
-  position: relative;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .footer {
