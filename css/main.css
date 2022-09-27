@@ -373,6 +373,10 @@ p {
   position: relative;
 }
 
+.wrapper {
+  position: relative;
+}
+
 .header {
   font-size: 18px;
   display: flex;
@@ -1000,6 +1004,7 @@ p {
 }
 
 .footer {
+  position: absolute;
   padding: 20px 3%;
   bottom: 0;
   width: 100%;
