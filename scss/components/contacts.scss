@@ -12,6 +12,10 @@
 
 .contacts-phone__text {
   white-space: nowrap;
+  transition: 0.5s;
+  &:hover {
+    color: #E01F3D;
+  }
 }
 
 .contacts-phone__icon--elem {

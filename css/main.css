@@ -314,12 +314,12 @@ html {
 }
 @media screen and (max-width: 768px) {
   html {
-    font-size: 15px;
+    font-size: 14px;
   }
 }
 @media screen and (max-width: 480px) {
   html {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 
@@ -451,6 +451,10 @@ p {
 
 .contacts-phone__text {
   white-space: nowrap;
+  transition: 0.5s;
+}
+.contacts-phone__text:hover {
+  color: #E01F3D;
 }
 
 .contacts-phone__icon--elem {
@@ -536,7 +540,7 @@ p {
 }
 @media screen and (max-width: 768px) {
   .presentation__subtitle {
-    padding: 0 20%;
+    padding: 0 25%;
   }
 }
 @media screen and (max-width: 480px) {
@@ -950,6 +954,11 @@ p {
     margin-bottom: 0.625rem;
   }
 }
+@media screen and (max-width: 768px) {
+  .radio {
+    margin-bottom: 0.625rem;
+  }
+}
 
 .radio--checkbox .radio__visible {
   border-radius: 0;
@@ -988,11 +997,13 @@ p {
 
 .map {
   max-width: 100%;
-  overflow: hidden;
 }
 
 .footer {
-  padding: 0 3%;
+  padding: 20px 3%;
+  bottom: 0;
+  width: 100%;
+  margin-top: auto;
 }
 
 .footer__content {

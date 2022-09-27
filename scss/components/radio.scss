@@ -7,6 +7,10 @@
   @include phones {
     margin-bottom: rem(10px);
   }
+
+  @include tablets {
+    margin-bottom: rem(10px);
+  }
 }
 
 .radio--checkbox { 
