@@ -1025,7 +1025,6 @@ p {
 
 @media screen and (max-width: 480px) {
   .footer__col--left {
-    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
