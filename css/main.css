@@ -724,6 +724,10 @@ p {
   }
 }
 
+.section-products {
+  background-color: #F8FAF9;
+}
+
 .reviews__display {
   background-color: #F8FAF9;
   padding: 42px;
