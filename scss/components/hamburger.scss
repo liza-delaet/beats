@@ -17,3 +17,24 @@
   height: 4px;
   border-radius: 10px;
 }
+
+.hamburger-menu {
+  background-color: #333537;
+  height: 100vh;
+  width: 100%;
+  display: none;
+  z-index: 1000;
+}
+
+.hamburger-menu__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 15%;
+  row-gap: rem(20px);
+}
+
+.hamburger-menu__link {
+  font-size: rem(36px);
+  color: #fff;
+}

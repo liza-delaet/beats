@@ -45,21 +45,22 @@ class Slider {
     if(!!this.settings.transition) {
       this.slider.style.transition = `${this.settings.transition}ms`
     }
-    if (this.settings.auto) {
-      setInterval(()=>{
-        this.next()
-      }, this.settings.autoInterval)
-    }
-    this.setEventListener();
-  }
+  //   if (this.settings.auto) {
+  //     setInterval(()=>{
+  //       this.next()
+  //     }, this.settings.autoInterval)
+  //   }
+  //   this.setEventListener();
+   }
 }
 
 const slider = new Slider('#slider', {
   transition: 1000,
-  auto: true,
-  autoInterval: 5000,
+  // auto: true,
+  // autoInterval: 5000,
 });
 
+slider.setEventListener();
 slider.init()
 
 

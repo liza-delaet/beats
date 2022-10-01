@@ -419,6 +419,27 @@ button {
   border-radius: 10px;
 }
 
+.hamburger-menu {
+  background-color: #333537;
+  height: 100vh;
+  width: 100%;
+  display: none;
+  z-index: 1000;
+}
+
+.hamburger-menu__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 15%;
+  row-gap: 1.25rem;
+}
+
+.hamburger-menu__link {
+  font-size: 2.25rem;
+  color: #fff;
+}
+
 .navigation {
   margin: 0 30px;
   padding-top: 5px;
@@ -807,6 +828,7 @@ button {
   width: 1.5rem;
   height: 2.5rem;
   background-color: inherit;
+  cursor: pointer;
 }
 
 .product__title {
@@ -861,6 +883,7 @@ button {
   height: 5.6875rem;
   border-radius: 4px;
   position: relative;
+  padding: 20px;
 }
 @media screen and (max-width: 768px) {
   .settings__image-wrapper {
@@ -870,17 +893,29 @@ button {
 
 .settings__menu {
   display: none;
-  max-width: 273px;
+  min-width: 273px;
   width: 100%;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.06);
   border-radius: 4px;
   position: absolute;
+  padding: 10px;
   left: 100%;
+  top: 0;
+  z-index: 100;
 }
 
 .settings__item {
   display: flex;
   column-gap: 30px;
+  padding: 15px;
+  color: black;
+  justify-content: space-between;
+}
+
+.settings__icon {
+  max-width: 32px;
 }
 
 .parameter {

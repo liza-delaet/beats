@@ -5,6 +5,7 @@
   height: rem(91px);
   border-radius: 4px;
   position: relative;
+  padding: 20px;
 
   @include tablets {
       display: none;
@@ -13,15 +14,27 @@
 
 .settings__menu {
   display: none;
-  max-width: 273px;
+  min-width: 273px;
   width: 100%;
-  background-color: rgba(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.06);
   border-radius: 4px;
   position: absolute;
+  padding: 10px;
   left: 100%;
+  top: 0;
+  z-index: 100;
 }
 
 .settings__item {
   display: flex;
   column-gap: 30px;
+  padding: 15px;
+  color: black;
+  justify-content: space-between;
+}
+
+.settings__icon {
+  max-width: 32px;
 }
