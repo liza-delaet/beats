@@ -916,6 +916,7 @@ button {
   backdrop-filter: blur(20px);
   box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.06);
   border-radius: 4px;
+  transition: 0.5s;
   position: absolute;
   padding: 10px;
   left: 100%;
@@ -923,7 +924,7 @@ button {
   z-index: 100;
 }
 
-.settings__menu-show {
+.settings__image-wrapper:hover .settings__menu {
   display: block;
 }
 
