@@ -423,21 +423,37 @@ button {
   background-color: #333537;
   height: 100vh;
   width: 100%;
-  display: none;
+  top: 0;
+  left: 0;
+  transform: translateX(100%);
+  transition: transform 0.2s;
+  position: fixed;
   z-index: 1000;
+}
+
+.showhamburger-menu {
+  transform: translateX(0);
 }
 
 .hamburger-menu__list {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 15%;
+  padding-top: 20%;
   row-gap: 1.25rem;
 }
 
 .hamburger-menu__link {
   font-size: 2.25rem;
   color: #fff;
+}
+
+.hamburger-menu__close {
+  font-size: 40px;
+  color: #fff;
+  top: 2%;
+  right: 3%;
+  position: absolute;
 }
 
 .navigation {
@@ -884,6 +900,7 @@ button {
   border-radius: 4px;
   position: relative;
   padding: 20px;
+  cursor: pointer;
 }
 @media screen and (max-width: 768px) {
   .settings__image-wrapper {
@@ -904,6 +921,10 @@ button {
   left: 100%;
   top: 0;
   z-index: 100;
+}
+
+.settings__menu-show {
+  display: block;
 }
 
 .settings__item {

@@ -1,3 +1,5 @@
+//Слайдер секция products
+
 const initial_number_slide = 1;
 
 class Slider {
@@ -65,3 +67,22 @@ slider.init()
 
 
 console.log(slider);
+
+
+
+// Hamburger меню
+const openHamburger = document.querySelector("#hamburger");
+const Hamburger = document.querySelector("#hamburger-menu");
+const CloseHamburger = document.querySelector("#hamburger-menu__close");
+
+function toggleMenu () {
+  Hamburger.classList.toggle("showhamburger-menu");
+  // if (Hamburger.classList.contains("showhamburger-menu")) {
+  //   Hamburger.classList.remove("showhamburger-menu");
+  // } else {
+  //   Hamburger.classList.add("showhamburger-menu");
+  // }
+};
+
+openHamburger.addEventListener("click", toggleMenu);
+CloseHamburger.addEventListener("click", toggleMenu);
