@@ -955,6 +955,35 @@ button {
   }
 }
 
+.worker__list {
+  display: flex;
+  column-gap: 1.25rem;
+  justify-content: center;
+}
+.worker__avatar {
+  max-width: 13.75rem;
+  max-height: 18.125rem;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 1.5625rem;
+}
+.worker__content {
+  display: flex;
+  flex-direction: column;
+  max-width: 13.75rem;
+  text-align: center;
+}
+.worker__name {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #292929;
+  padding-bottom: 0.6875rem;
+}
+.worker__post {
+  color: #292929;
+  padding-bottom: 0.25rem;
+}
+
 .reviews__display {
   background-color: #F8FAF9;
   padding: 42px;
