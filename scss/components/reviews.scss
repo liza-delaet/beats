@@ -4,16 +4,7 @@
   margin-bottom: 15px;
   overflow: hidden;
   position: relative;
-
-  &-inner {
-    display: flex;
-
-    @include tablets {
-      flex-direction: column;
-      text-align: center;
-      align-items: center;
-    }
-  }
+  min-height: 348px;
 
   &::before {
     content: "";
@@ -26,6 +17,29 @@
     left: 50%;
     transform: translateX(-50%);
     top: -58px;
+  }
+}
+
+.reviews__item {
+  display: flex;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
+  opacity: 0;
+
+  @include tablets {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  &--active {
+    position: static;
+    opacity: 1;
+    pointer-events: unset;
   }
 }
 

@@ -86,3 +86,57 @@ function toggleMenu () {
 
 openHamburger.addEventListener("click", toggleMenu);
 CloseHamburger.addEventListener("click", toggleMenu);
+
+
+// Секция reviews
+
+const findBlockAlias = (alias) => {
+  return $(".reviews__item").filter((ndx, item) => {
+    return $(item).attr("data-linked") === alias;
+  });
+};
+
+$(".interactive-avatar__link").click(e => {
+  e.preventDefault();
+
+  const $this = $(e.currentTarget);
+  const target = $this.attr("data-open");
+  const ItemShow = findBlockAlias(target);
+  const curItem = $this.closest(".reviews__switcher-item");
+
+  ItemShow.addClass("reviews__item--active").siblings().removeClass("reviews__item--active");
+  curItem.addClass("interactive-avatar--active").siblings().removeClass("interactive-avatar--active");
+});
+
+
+// Секция worker аккордеон
+const openItem = item => {
+  const container = item.closest(".worker__item");
+  const contentBlock = container.find(".worker__text");
+  const textBlock = contentBlock.find(".worker__text--block");
+  const reqHeight = textBlock.height();
+
+  container.addClass("active");
+  contentBlock.height(reqHeight);
+}
+
+const CloseEveryItem = container => {
+  const items = container.find(".worker__text");
+  const itemContainer = container.find(".worker__item");
+
+  itemContainer.removeClass("active");
+  items.height(0);
+}
+
+$(".worker__name").click(e => {
+  const $this = $(e.currentTarget);
+  const container = $this.closest(".worker__list");
+  const elemContainer = $this.closest(".worker__item");
+
+  if (elemContainer.hasClass("active")) {
+    CloseEveryItem(container);
+  } else {
+    CloseEveryItem(container);
+    openItem($this);
+  }
+})
