@@ -1,0 +1,33 @@
+.modal {
+  height: 100vh;
+  min-height: 650px;
+  background: #333537;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+
+.modal__container {
+  width: rem(309px);
+  height: rem(176px);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: rem(18px);
+  border-radius: 5px;
+  margin: 15% auto;
+}
+
+.modal__content {
+  color: #000;
+  font-size: rem(18px);
+}
+
+.modal-error {
+  color: #E01F3D;
+}

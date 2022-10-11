@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Beats</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./css/main.css">
 </head>
 
@@ -506,39 +507,40 @@
         <div class="container">
           <h2 class="title section__title delivery__title">Закажите доставку</h2>
           <form class="form">
+            <input type="hidden" name="to" value="mail@mail.com">
             <div class="form__col">
               <div class="form__row">
                 <label class="form__block">
                   <div class="form__title">Имя</div>
-                  <input type="text" class="form__input">
+                  <input type="text" class="form__input" name="name">
                 </label>
                 <label class="form__block">
                   <div class="form__title">Телефон</div>
-                  <input type="text" class="form__input">
+                  <input type="text" class="form__input" name="phone">
                 </label>
               </div>
               <div class="form__row">
                 <label class="form__block">
                   <div class="form__title">Улица</div>
-                  <input type="text" class="form__input">
+                  <input type="text" class="form__input" name="street">
                 </label>
               </div>
               <div class="form__row">
                 <label class="form__block">
                   <div class="form__title">Дом</div>
-                  <input type="text" class="form__input">
+                  <input type="text" class="form__input" name="home">
                 </label>
                 <label class="form__block">
                   <div class="form__title">Корпус</div>
-                  <input type="text" class="form__input">
+                  <input type="text" class="form__input" name="part">
                 </label>
                 <label class="form__block">
                   <div class="form__title">Квартира</div>
-                  <input type="text" class="form__input">
+                  <input type="text" class="form__input" name="flat">
                 </label>
                 <label class="form__block">
                   <div class="form__title">Этаж</div>
-                  <input type="text" class="form__input">
+                  <input type="text" class="form__input" name="floor">
                 </label>
               </div>
             </div>
@@ -546,7 +548,7 @@
               <div class="form__row">
                 <label class="form__block">
                   <div class="form__title">Комментарий</div>
-                  <textarea class="form__input form__input--textarea"></textarea>
+                  <textarea class="form__input form__input--textarea" name="comment"></textarea>
                 </label>
               </div>
               <div class="form__controls">
@@ -574,6 +576,14 @@
               </div>
             </div>
           </form>
+        </div>
+        <div class="modal" id="modal">
+          <div class="modal__container">
+            <div class="modal__content">Сообщение отправлено</div>
+            <div class="modal__button-container">
+              <a href="" class="button app-submit-button button--red">Закрыть</a>
+            </div>
+          </div>
         </div>
       </section>
       <section class="section section-map">
@@ -692,6 +702,7 @@
     </ul>
   </nav>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="./index.js"></script>
 </body>
 

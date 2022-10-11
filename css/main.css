@@ -987,6 +987,11 @@ button {
   color: #292929;
   padding-bottom: 0.6875rem;
 }
+.worker__name::after {
+  content: url(../pictures/icons/elemetred.svg);
+  padding-left: 3px;
+  padding-bottom: 3px;
+}
 .worker__post {
   color: #292929;
   padding-bottom: 0.25rem;
@@ -1182,6 +1187,7 @@ button {
 .section-delivery {
   background-color: #181818;
   color: #fff;
+  position: relative;
 }
 
 .delivery__title {
@@ -1276,6 +1282,44 @@ button {
     display: flex;
     justify-content: center;
   }
+}
+
+.input-error {
+  border-color: #E01F3D;
+}
+
+.modal {
+  height: 100vh;
+  min-height: 650px;
+  background: #333537;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+
+.modal__container {
+  width: 19.3125rem;
+  height: 11rem;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1.125rem;
+  border-radius: 5px;
+  margin: 15% auto;
+}
+
+.modal__content {
+  color: #000;
+  font-size: 1.125rem;
+}
+
+.modal-error {
+  color: #E01F3D;
 }
 
 .radio {
