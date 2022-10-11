@@ -1,5 +1,7 @@
 .section-player {
   position: relative;
+  background-color: #F8FAF9;
+  display: none;
 
   &::before {
     content: url(../pictures/bg/elemredpl.svg);

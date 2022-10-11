@@ -196,10 +196,14 @@ $(".form").submit(e => {
     });
 
     request.fail(data => {
-      const message = data.responeJSON.message; //???
+      const message = data.statusText;
+      if (message == "error") {
+        content.text("Ошибка. Повторите отправку позже.");
+      } else {
         content.text(message);
-        modal.addClass("modal-error");
-        console.log(data);
+      }
+
+      content.addClass("modal-error");
     });
 
     request.always(() => {
@@ -264,8 +268,8 @@ let player;
 
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('yt-player', {
-    height: '390',
-    width: '660',
+    // height: '390',
+    // width: '660',
     videoId: 'nsBP4T15PZ4',
     events: {
       // 'onReady': onPlayerReady,

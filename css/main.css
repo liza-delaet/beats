@@ -989,8 +989,12 @@ button {
 }
 .worker__name::after {
   content: url(../pictures/icons/elemetred.svg);
-  padding-left: 3px;
+  padding: 3px;
   padding-bottom: 3px;
+  display: inline-block;
+}
+.active .worker__name::after {
+  transform: rotate(180deg) translateY(-15%);
 }
 .worker__post {
   color: #292929;
@@ -1156,6 +1160,7 @@ button {
   position: absolute;
   bottom: -25px;
   left: 10%;
+  z-index: 10;
 }
 
 .interactive-avatar {
@@ -1186,6 +1191,8 @@ button {
 
 .section-player {
   position: relative;
+  background-color: #F8FAF9;
+  display: none;
 }
 .section-player::before {
   content: url(../pictures/bg/elemredpl.svg);

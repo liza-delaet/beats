@@ -35,8 +35,13 @@
 
     &::after {
       content: url(../pictures/icons/elemetred.svg);
-      padding-left: 3px;
+      padding: 3px;
       padding-bottom: 3px;
+      display: inline-block;
+      
+    }
+    .active &::after {
+      transform: rotate(180deg) translateY(-15%);
     }
   }
 
