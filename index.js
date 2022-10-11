@@ -71,6 +71,7 @@ console.log(slider);
 
 
 // Hamburger меню
+
 const openHamburger = document.querySelector("#hamburger");
 const Hamburger = document.querySelector("#hamburger-menu");
 const CloseHamburger = document.querySelector("#hamburger-menu__close");
@@ -86,6 +87,7 @@ function toggleMenu () {
 
 openHamburger.addEventListener("click", toggleMenu);
 CloseHamburger.addEventListener("click", toggleMenu);
+
 
 
 // Секция reviews
@@ -109,7 +111,9 @@ $(".interactive-avatar__link").click(e => {
 });
 
 
+
 // Секция worker аккордеон
+
 const openItem = item => {
   const container = item.closest(".worker__item");
   const contentBlock = container.find(".worker__text");
@@ -142,7 +146,9 @@ $(".worker__name").click(e => {
 });
 
 
+
 //Секция delivery форма
+
 const validateFields = (form, fieldsArray) => {
   fieldsArray.forEach(field => {
     field.removeClass("input-error");
@@ -209,4 +215,69 @@ $(".app-submit-button").click(e => {
   e.preventDefault();
 
   $.fancybox.close();
-})
+});
+
+
+
+//Карта 
+
+let myMap;
+
+const init = () => {
+  myMap = new ymaps.Map("map", {
+    center: [55.752712, 37.598291],
+    zoom: 14,
+    controls: []
+  });
+
+  var coords = [
+    [55.758123, 37.624532],
+    [55.757800, 37.582981],
+    [55.749774, 37.607707],
+    [55.744224, 37.583042]
+  ];
+
+  var myCollection = new ymaps.GeoObjectCollection({}, {
+    draggable: false,
+    iconLayout: 'default#image',
+    iconImageHref: "./pictures/icons/marker.svg",
+    iconImageSize: [58, 73],
+    iconImageOffset: [-3, -73]
+  });
+
+  coords.forEach(coord => {
+    myCollection.add(new ymaps.Placemark(coord));
+  });
+
+  myMap.geoObjects.add(myCollection);
+
+  myMap.behaviors.disable('scrollZoom');
+};
+
+ymaps.ready(init);
+
+
+
+//Плеер
+
+let player;
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('yt-player', {
+    height: '390',
+    width: '660',
+    videoId: 'nsBP4T15PZ4',
+    events: {
+      // 'onReady': onPlayerReady,
+      // 'onStateChange': onPlayerStateChange
+    },
+    playerVars: {
+      controls: 0,
+      disablekb: 0,
+      showinfo: 0,
+      rel: 0,
+      autoplay: 0,
+      modestbranding: 0
+    }
+  });
+}

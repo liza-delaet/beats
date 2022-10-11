@@ -1,0 +1,15 @@
+.section-player {
+  position: relative;
+
+  &::before {
+    content: url(../pictures/bg/elemredpl.svg);
+    position: absolute;
+    bottom: -32px;
+    right: 15%;
+    z-index: 10;
+  }
+
+  &__container {
+    text-align: center;
+  }
+}
