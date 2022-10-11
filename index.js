@@ -198,7 +198,7 @@ $(".form").submit(e => {
     request.fail(data => {
       const message = data.statusText;
       if (message == "error") {
-        content.text("Ошибка. Повторите отправку позже.");
+        content.text("Ошибка. Попробуйте повторить отправку позже.");
       } else {
         content.text(message);
       }
