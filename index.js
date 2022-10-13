@@ -65,11 +65,6 @@ const slider = new Slider('#slider', {
 slider.setEventListener();
 slider.init()
 
-
-console.log(slider);
-
-
-
 // Hamburger меню
 
 const openHamburger = document.querySelector("#hamburger");
@@ -265,14 +260,62 @@ ymaps.ready(init);
 //Плеер
 
 let player;
+const playerContainer = $(".player");
+
+let eventsInit = () => {
+  $(".player__start").click(e => {
+    e.preventDefault();
+
+  if (playerContainer.hasClass("paused")) {
+    playerContainer.removeClass("paused");
+    player.pauseVideo();
+  } else {
+    playerContainer.addClass("paused");
+    player.playVideo();
+    }
+  });
+
+  $(".player__playback").click(e => {
+    const bar = $(e.currentTarget);
+    const clickedPosition = e.originalEvent.layerX;
+    const newButtonPositionPercent = (clickedPosition / bar.width()) * 100;
+    const newPlaybackPositionSec = (player.getDuration() / 100) * newButtonPositionPercent;
+
+    $(".player__playback-button").css({
+      left: `${newButtonPositionPercent}%`
+    });
+
+    player.seekTo(newPlaybackPositionSec);
+  });
+};
+
+const onPlayerReady = () => {
+  let interval;
+  const durationSec = player.getDuration();
+
+  if (typeof interval !== 'undefined') {
+    clearInterval(interval);
+  }
+
+  interval = setInterval(() => {
+    const completedSec = player.getCurrentTime();
+    const completedPercent = (completedSec / durationSec) * 100;
+
+    $(".player__playback-button").css({
+      left: `${completedPercent}%`
+    });
+
+  }, 1000);
+};
+
 
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('yt-player', {
-    // height: '390',
-    // width: '660',
-    videoId: 'nsBP4T15PZ4',
+    height: '100%',
+    width: '100%',
+    videoId: 'kLppaLNw7d0',
     events: {
-      // 'onReady': onPlayerReady,
+      'onReady': onPlayerReady,
       // 'onStateChange': onPlayerStateChange
     },
     playerVars: {
@@ -281,7 +324,195 @@ function onYouTubeIframeAPIReady() {
       showinfo: 0,
       rel: 0,
       autoplay: 0,
-      modestbranding: 0
+      modestbranding: 1,
     }
   });
 }
+
+eventsInit();
+
+
+
+// Секция colors аккордеон
+
+const mesureWidth = (elem) => {
+  let reqElemWidth = 0;
+
+  const screenWidth = $(window).width();
+  const container = elem.closest('.colors-menu');
+  const titlesBlocks = container.find('.colors-menu__title');
+  const titlesWidth = titlesBlocks.width() * titlesBlocks.length;
+
+  const textContainer = elem.find('.colors-menu__container');
+  const paddingLeft = parseInt(textContainer.css('padding-left'));
+  const paddingRight = parseInt(textContainer.css('padding-right'));
+
+  const isMobile = window.matchMedia('(max-width: 768px').matches;
+
+  if (isMobile) {
+    reqElemWidth = screenWidth - titlesWidth;
+  } else {
+    reqElemWidth = 500;
+  }
+
+  return {
+    container: reqElemWidth,
+    textContainer: reqElemWidth - paddingLeft - paddingRight
+  }
+};
+
+const closeEveryElemInContainer = (container) => {
+  const elems = container.find('.colors-menu__item');
+  const content = container.find('.colors-menu__content');
+
+  elems.removeClass('active');
+  content.width(0);
+};
+
+const openElem = (elem) => {
+  const hiddenContent = elem.find('.colors-menu__content');
+  const reqWidth = mesureWidth(elem);
+  const textBlock = elem.find('.colors-menu__container');
+
+  elem.addClass('active');
+  hiddenContent.width(reqWidth.container);
+  textBlock.width(reqWidth.textContainer);
+};
+
+$('.colors-menu__title').on('click', e => {
+  e.preventDefault();
+
+  const $this = $(e.currentTarget);
+  const elem = $this.closest('.colors-menu__item');
+  const elemOpened = elem.hasClass('active');
+  const container = $this.closest('.colors-menu');
+
+  if (elemOpened) {
+    closeEveryElemInContainer(container)
+  } else {
+    closeEveryElemInContainer(container)
+    openElem(elem);
+  }
+});
+
+$('.colors-menu__close').on('click', e => {
+  e.preventDefault();
+
+  closeEveryElemInContainer($('.colors-menu'));
+});
+
+
+
+// Скролл по секциям
+
+const sections = $('section');
+const display = $('.maincontent');
+
+//https://hgoebl.github.io/mobile-detect.js/ - определим устройтсво моб или нет
+const mobileDetect = new MobileDetect(window.navigator.userAgent);
+const isMobile = mobileDetect.mobile();
+
+let inScroll = false;
+
+sections.first().addClass('active');
+
+const perfomTransition = sectionEq => {
+
+  if (inScroll === false) {
+    inScroll = true;
+    const position = sectionEq * -100;
+
+    const sideMenu = $('.fixed-menu');
+
+    display.css({
+    transform: `translateY(${position}%)`
+  });
+
+  sections.eq(sectionEq).addClass('active').siblings().removeClass('active');
+
+
+  setTimeout(() => {
+    inScroll = false;
+
+    sideMenu
+    .find('.fixed-menu__item')
+    .eq(sectionEq)
+    .addClass('fixed-menu__item--active')
+    .siblings()
+    .removeClass('fixed-menu__item--active');
+  }, 1300);
+  }
+};
+
+const scrollViewport = direction => {
+  const activeSection = sections.filter('.active');
+  const nextSection = activeSection.next();
+  const prevSection = activeSection.prev();
+
+  if (direction === 'next' && nextSection.length) {
+    perfomTransition(nextSection.index())
+  }
+
+  if (direction === 'prev' && prevSection.length) {
+    perfomTransition(prevSection.index())
+  }
+}
+
+$(window).on('wheel', e => {
+  const deltaY = e.originalEvent.deltaY;
+
+  if (deltaY > 0) {
+    scrollViewport('next');
+  }
+
+  if (deltaY < 0) {
+    scrollViewport('prev');
+  }
+});
+
+//Обработка скролла по клавиатуре
+$(window).on('keydown', e => {
+  
+  const tagName = e.target.tagName.toLowerCase();
+
+  if (tagName !== 'input' && tagName !== 'textarea') {
+    switch (e.keyCode) {
+      case 38: //prev
+        scrollViewport('prev');
+        break;
+  
+      case 40: //next
+      scrollViewport('next');
+        break;
+    }
+  }
+})
+
+//Навигация по секциям
+$('.wrapper').on('touchmove', e => e.preventDefault());
+
+$('[data-scroll-to]').click(e => {
+  e.preventDefault();
+
+  const $this = $(e.currentTarget);
+  const target = $this.attr('data-scroll-to');
+  const reqSection = $(`[data-section-id=${target}]`);
+
+  perfomTransition(reqSection.index());
+});
+
+if (isMobile) {
+//Скролл на мобильных устройствах
+//https://github.com/mattbryson/TouchSwipe-Jquery-Plugin
+  $("body").swipe( {
+    swipe: function (event, direction,) {
+      const scroller = viewportScroller();
+      let = scrollDirection = '';
+
+      if (direction === 'up') scrollDirection = 'next';
+      if (direction === 'down') scrollDirection = 'prev';
+
+      scroller[scrollDirection]();
+      }
+    });
+  }

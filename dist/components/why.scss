@@ -1,0 +1,32 @@
+.why {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-why {
+  position: relative;
+
+  &::before {
+    content: url(../pictures/bg/elemred.svg);
+    position: absolute;
+    bottom: -25px;
+    left: 10%;
+    z-index: 100;
+  }
+}
+
+.why__title {
+  margin-bottom: 10px;
+}
+
+.why__subtitle {
+  padding: 0 25%;
+
+  @include tablets {
+    padding: 0 15%;
+  }
+
+  @include phones {
+    padding: 0 5%;
+  }
+}

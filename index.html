@@ -13,7 +13,7 @@
 <body>
   <div class="wrapper">
     <div class="maincontent">
-      <section class="presentation">
+      <section class="presentation" data-section-id="presentation">
         <div class="container presentation__container">
           <header class="header">
             <a href="#" class="logo">
@@ -22,25 +22,25 @@
             <nav class="navigation">
               <ul class="navigation__list">
                 <li class="navigation__item">
-                  <a href="#" class="navigation__link">О нас</a>
+                  <a href="#" class="navigation__link" data-scroll-to="why">О нас</a>
                 </li>
                 <li class="navigation__item">
-                  <a href="#" class="navigation__link">Наушники</a>
+                  <a href="#" class="navigation__link" data-scroll-to="products">Наушники</a>
                 </li>
                 <li class="navigation__item">
-                  <a href="#" class="navigation__link">Команда</a>
+                  <a href="#" class="navigation__link" data-scroll-to="worker">Команда</a>
                 </li>
                 <li class="navigation__item">
-                  <a href="#" class="navigation__link">Цвета</a>
+                  <a href="#" class="navigation__link" data-scroll-to="colors">Цвета</a>
                 </li>
                 <li class="navigation__item">
-                  <a href="#" class="navigation__link">Отзывы</a>
+                  <a href="#" class="navigation__link" data-scroll-to="reviews">Отзывы</a>
                 </li>
                 <li class="navigation__item">
-                  <a href="#" class="navigation__link">Как мы работаем</a>
+                  <a href="#" class="navigation__link" data-scroll-to="player">Как мы работаем</a>
                 </li>
                 <li class="navigation__item">
-                  <a href="#" class="navigation__link">Контакты</a>
+                  <a href="#" class="navigation__link" data-scroll-to="map">Контакты</a>
                 </li>
               </ul>
             </nav>
@@ -60,7 +60,7 @@
             <h1 class="title presentation__title">Беспроводные наушники Beats Solo 3</h1>
             <div class="presentation__subtitle">Встречайте новую версию наушников
               из линейки Powerbeats.</div>
-            <a href="#" class="button button--red">Заказать</a>
+            <a href="#" class="button button--red" data-scroll-to="delivery">Заказать</a>
           </div>
           <div class="presentation__icon-section">
             <ul class="characteristics">
@@ -86,7 +86,7 @@
           </div>
         </div>
       </section>
-      <section class="section section-why">
+      <section class="section section-why" data-section-id="why">
         <div class="container">
           <div class="why">
             <h2 class="section__title why__title">Почему Beats Solo 3?</h2>
@@ -149,7 +149,7 @@
           </ul>
         </div>
       </section>
-      <section class="section section-products">
+      <section class="section section-products" data-section-id="products">
         <div class="container">
           <div class="products-slider">
             <div class="products__wrapper">
@@ -224,7 +224,7 @@
                           </ul>
                           <div class="product__booking">
                             <div class="product__price">14 990 ₽</div>
-                            <a href="#" class="button button--red">Заказать</a>
+                            <a href="#" class="button button--red" data-scroll-to="delivery">Заказать</a>
                           </div>
                         </div>
                       </div>
@@ -328,7 +328,7 @@
           </div>
         </div>
       </section>
-      <section class="section section-worker">
+      <section class="section section-worker" data-section-id="worker">
         <div class="container">
           <h2 class="title section__title">Команда</h2>
           <div class="worker">
@@ -435,7 +435,40 @@
           </div>
         </div>
       </section>
-      <section class="section section-reviews">
+      <section class="section section-colors" data-section-id="colors">
+        <h2 class="title section__title colors__title">Цвета</h2>
+        <ul class="colors-menu">
+          <li class="colors-menu__item">
+            <a href="" class="colors-menu__title colors-menu__title--grey">«Атласное серебро»</a>
+            <div class="colors-menu__content">
+              <div class="colors-menu__container">
+                <button class="colors-menu__close" id="colors-menu__close" href="#">x</button>
+                <div class="colors-menu__content-text">Наушники Beats Solo3 могут работать до 40 часов без подзарядки, чтобы вы могли пользоваться ими каждый день. 5-минутной зарядки Fast Fuel хватит ещё на 3 часа воспроизведения. Фирменное звучание Beats в наушниках с технологией Bluetooth класса 1 будет сопровождать вас повсюду — куда бы вы ни отправились. 
+                  Расположение чашек с мягкими амбушюрами можно регулировать — вы сможете носить их целый день.</div>
+              </div>
+            </div>
+          </li>
+          <li class="colors-menu__item">
+            <a href="" class="colors-menu__title colors-menu__title--black">«Чёрный матовый»</a>
+            <div class="colors-menu__content">
+              <div class="colors-menu__container">
+                <button class="colors-menu__close" id="colors-menu__close" href="#">x</button>
+                <div class="colors-menu__content-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa soluta veritatis quis expedita quaerat doloribus odio? Est officia fugiat totam deleniti illum, laboriosam, libero ut dolore aliquam nostrum omnis cum!</div>
+              </div>
+            </div>
+          </li>
+          <li class="colors-menu__item">
+            <a href="" class="colors-menu__title colors-menu__title--red">«Красный цитрус»</a>
+            <div class="colors-menu__content">
+              <div class="colors-menu__container">
+                <button class="colors-menu__close" id="colors-menu__close" href="#">x</button>
+                <div class="colors-menu__content-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo deleniti a ratione labore animi adipisci quas ut itaque voluptatem eveniet debitis corporis, assumenda illo maiores dolor voluptates illum laboriosam cumque!</div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <section class="section section-reviews" data-section-id="reviews">
         <div class="container">
           <h2 class="title section__title">Отзывы</h2>
           <div class="reviews">
@@ -503,7 +536,7 @@
           </div>
         </div>
       </section>
-      <section class="section section-player">
+      <section class="section section-player" data-section-id="player">
         <div class="container">
           <h2 class="title section__title">Как мы работаем</h2>
           <div class="section-player__container">
@@ -526,7 +559,7 @@
           </div>
         </div>
       </section>
-      <section class="section section-delivery">
+      <section class="section section-delivery" data-section-id="delivery">
         <div class="container">
           <h2 class="title section__title delivery__title">Закажите доставку</h2>
           <form class="form">
@@ -609,86 +642,86 @@
           </div>
         </div>
       </section>
-      <section class="section section-map">
+      <section class="section section-map" data-section-id="map">
           <div class="map" id="map"></div>
+          <footer class="footer">
+            <div class="container">
+              <div class="footer__content">
+                <div class="footer__col footer__col--left">
+                  <div class="address">Москва, ул.Новый Арбат, д.31/12</div>
+                  <a href="tel:+78009039090" class="contacts-phone footer__contacts-phone">
+                    <span class="contacts-phone__icon">
+                      <img src="./pictures/icons/tel.svg" alt="" class="contacts-phone__icon--elem">
+                    </span>
+                    <span class="contacts-phone__text">8 800 903 90 90</span>
+                  </a>
+                </div>
+                <div class="footer__col footer__col--right">
+                  <ul class="social">
+                    <li class="social__item">
+                      <a href="#" class="social__link">
+                        <svg class="social__icon" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                          <use href="./pictures/sprite.svg#vk"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a href="#" class="social__link">
+                        <svg class="social__icon" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                          <use href="./pictures/sprite.svg#fb"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a href="#" class="social__link">
+                        <svg class="social__icon" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                          <use href="./pictures/sprite.svg#inst"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a href="#" class="social__link">
+                        <svg class="social__icon" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                          <use href="./pictures/sprite.svg#tg"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+          </footer>
       </section>
     </div>
-    <footer class="footer">
-      <div class="container">
-        <div class="footer__content">
-          <div class="footer__col footer__col--left">
-            <div class="address">Москва, ул.Новый Арбат, д.31/12</div>
-            <a href="tel:+78009039090" class="contacts-phone footer__contacts-phone">
-              <span class="contacts-phone__icon">
-                <img src="./pictures/icons/tel.svg" alt="" class="contacts-phone__icon--elem">
-              </span>
-              <span class="contacts-phone__text">8 800 903 90 90</span>
-            </a>
-          </div>
-          <div class="footer__col footer__col--right">
-            <ul class="social">
-              <li class="social__item">
-                <a href="#" class="social__link">
-                  <svg class="social__icon" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
-                    <use href="./pictures/sprite.svg#vk"></use>
-                  </svg>
-                </a>
-              </li>
-              <li class="social__item">
-                <a href="#" class="social__link">
-                  <svg class="social__icon" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
-                    <use href="./pictures/sprite.svg#fb"></use>
-                  </svg>
-                </a>
-              </li>
-              <li class="social__item">
-                <a href="#" class="social__link">
-                  <svg class="social__icon" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
-                    <use href="./pictures/sprite.svg#inst"></use>
-                  </svg>
-                </a>
-              </li>
-              <li class="social__item">
-                <a href="#" class="social__link">
-                  <svg class="social__icon" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
-                    <use href="./pictures/sprite.svg#tg"></use>
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-    </footer>
   </div>
   </div>
   <nav class="fixed-menu">
     <ul class="fixed-menu__list">
       <li class="fixed-menu__item fixed-menu__item--active">
-        <a href="#" class="fixed-menu__link"></a>
+        <a href="#" class="fixed-menu__link" data-scroll-to="presentation"></a>
       </li>
       <li class="fixed-menu__item">
-        <a href="#" class="fixed-menu__link"></a>
+        <a href="#" class="fixed-menu__link" data-scroll-to="why"></a>
       </li>
       <li class="fixed-menu__item">
-        <a href="#" class="fixed-menu__link"></a>
+        <a href="#" class="fixed-menu__link" data-scroll-to="products"></a>
       </li>
       <li class="fixed-menu__item">
-        <a href="#" class="fixed-menu__link"></a>
+        <a href="#" class="fixed-menu__link" data-scroll-to="worker"></a>
       </li>
       <li class="fixed-menu__item">
-        <a href="#" class="fixed-menu__link"></a>
+        <a href="#" class="fixed-menu__link" data-scroll-to="colors"></a>
       </li>
       <li class="fixed-menu__item">
-        <a href="#" class="fixed-menu__link"></a>
+        <a href="#" class="fixed-menu__link" data-scroll-to="reviews"></a>
       </li>
       <li class="fixed-menu__item">
-        <a href="#" class="fixed-menu__link"></a>
+        <a href="#" class="fixed-menu__link" data-scroll-to="player"></a>
       </li>
       <li class="fixed-menu__item">
-        <a href="#" class="fixed-menu__link"></a>
+        <a href="#" class="fixed-menu__link" data-scroll-to="delivery"></a>
       </li>
       <li class="fixed-menu__item">
-        <a href="#" class="fixed-menu__link"></a>
+        <a href="#" class="fixed-menu__link" data-scroll-to="map"></a>
       </li>
     </ul>
   </nav>
@@ -696,25 +729,25 @@
     <a class="hamburger-menu__close" id="hamburger-menu__close" href="#">x</a>
     <ul class="hamburger-menu__list">
       <li class="hamburger-menu__item">
-        <a href="#" class="hamburger-menu__link">О нас</a>
+        <a href="#" class="hamburger-menu__link" data-scroll-to="why">О нас</a>
       </li>
       <li class="hamburger-menu__item">
-        <a href="#" class="hamburger-menu__link">Наушники</a>
+        <a href="#" class="hamburger-menu__link" data-scroll-to="products">Наушники</a>
       </li>
       <li class="hamburger-menu__item">
-        <a href="#" class="hamburger-menu__link">Команда</a>
+        <a href="#" class="hamburger-menu__link" data-scroll-to="worker">Команда</a>
       </li>
       <li class="hamburger-menu__item">
-        <a href="#" class="hamburger-menu__link">Цены</a>
+        <a href="#" class="hamburger-menu__link" data-scroll-to="colors">Цвета</a>
       </li>
       <li class="hamburger-menu__item">
-        <a href="#" class="hamburger-menu__link">Отзывы</a>
+        <a href="#" class="hamburger-menu__link" data-scroll-to="reviews">Отзывы</a>
       </li>
       <li class="hamburger-menu__item">
-        <a href="#" class="hamburger-menu__link">Как мы работаем</a>
+        <a href="#" class="hamburger-menu__link" data-scroll-to="player">Как мы работаем</a>
       </li>
       <li class="hamburger-menu__item">
-        <a href="#" class="hamburger-menu__link">Контакты</a>
+        <a href="#" class="hamburger-menu__link" data-scroll-to="map">Контакты</a>
       </li>
     </ul>
   </nav>
@@ -722,6 +755,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
   <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.5/mobile-detect.min.js"></script>
   <script src="./index.js"></script>
 </body>
 

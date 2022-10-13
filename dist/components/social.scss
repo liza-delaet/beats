@@ -1,0 +1,19 @@
+.social {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.social__item {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.social__icon {
+  fill: #B3B3B3;
+  transition: 0.5s;
+
+  &:hover {
+    fill: #000;
+  }
+}

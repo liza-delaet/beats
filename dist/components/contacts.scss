@@ -1,0 +1,23 @@
+.contacts__phone {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+
+  &__icon--elem {
+    width: 14px;
+    height: 14px;
+    margin-right: 6px;
+  }
+}
+
+.contacts-phone__text {
+  white-space: nowrap;
+  transition: 0.5s;
+  &:hover {
+    color: #E01F3D;
+  }
+}
+
+.contacts-phone__icon--elem {
+  flex-shrink: 0;
+}

@@ -1,0 +1,49 @@
+.product {
+
+  &__title {
+    font-size: rem(36px);
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 25px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(24px);
+    position: relative;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(24px);
+
+    @include tablets {
+      align-items: center;
+    }
+  }
+
+  &__booking {
+    display: flex;
+    align-items: center;
+    column-gap: rem(13px);
+
+    @include tablets {
+      column-gap: rem(40px);
+    }
+  }
+
+  &__desc {
+    max-width: 65%;
+
+    @include tablets {
+      max-width: 75%;
+    }
+  }
+
+  &__price {
+    color: #151515;
+    font-size: rem(36px);
+  }
+}

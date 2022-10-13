@@ -1,0 +1,12 @@
+.characteristics {
+  display: flex;
+}
+
+.characteristics__item {
+  margin-right: 50px;
+  width: 160px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+  }

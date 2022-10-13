@@ -1,0 +1,13 @@
+.header {
+  font-size: 18px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.header__contacts-phone {
+  padding-top: 5px;
+  @include tablets {
+    display: none;
+  }
+}
