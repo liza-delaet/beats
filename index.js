@@ -392,7 +392,9 @@ const mesureWidth = (elem) => {
   const screenWidth = $(window).width();
   const container = elem.closest('.colors-menu');
   const titlesBlocks = container.find('.colors-menu__title');
-  const titlesWidth = titlesBlocks.width() * titlesBlocks.length;
+  const titlePaddingLeft = parseInt(titlesBlocks.css('padding-left'));
+  const titlePaddingRight = parseInt(titlesBlocks.css('padding-right'));
+  const titlesWidth = (titlesBlocks.width() + titlePaddingRight + titlePaddingLeft) * titlesBlocks.length;
 
   const textContainer = elem.find('.colors-menu__container');
   const paddingLeft = parseInt(textContainer.css('padding-left'));
@@ -405,6 +407,8 @@ const mesureWidth = (elem) => {
   } else {
     reqElemWidth = 500;
   }
+  console.log("screenwidth " + screenWidth);
+    console.log(titlesWidth);
 
   return {
     container: reqElemWidth,
