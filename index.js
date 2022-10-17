@@ -93,7 +93,7 @@ const findBlockAlias = (alias) => {
   });
 };
 
-$(".interactive-avatar__link").click(e => {
+$(".interactive-avatar__link").on("click",(e => {
   e.preventDefault();
 
   const $this = $(e.currentTarget);
@@ -103,7 +103,7 @@ $(".interactive-avatar__link").click(e => {
 
   ItemShow.addClass("reviews__item--active").siblings().removeClass("reviews__item--active");
   curItem.addClass("interactive-avatar--active").siblings().removeClass("interactive-avatar--active");
-});
+}));
 
 
 
@@ -157,7 +157,7 @@ const validateFields = (form, fieldsArray) => {
   return errorFields.length === 0;
 }
 
-$(".form").submit(e => {
+$(".form").on("submit",(e => {
   e.preventDefault();
 
   const form = $(e.currentTarget);
@@ -208,13 +208,14 @@ $(".form").submit(e => {
       });
     })
   }
-});
+  $(".form").trigger('reset');
+}));
 
-$(".app-submit-button").click(e => {
+$(".app-submit-button").on("click",(e => {
   e.preventDefault();
 
   $.fancybox.close();
-});
+}));
 
 
 
@@ -263,7 +264,7 @@ let player;
 const playerContainer = $(".player");
 
 let eventsInit = () => {
-  $(".player__start").click(e => {
+  $(".player__start").on("click",(e => {
     e.preventDefault();
 
   if (playerContainer.hasClass("paused")) {
@@ -273,9 +274,9 @@ let eventsInit = () => {
     playerContainer.addClass("paused");
     player.playVideo();
     }
-  });
+  }));  
 
-  $(".player__playback").click(e => {
+  $(".player__playback").on("click",(e => {
     const bar = $(e.currentTarget);
     const clickedPosition = e.originalEvent.layerX;
     const newButtonPositionPercent = (clickedPosition / bar.width()) * 100;
@@ -286,7 +287,36 @@ let eventsInit = () => {
     });
 
     player.seekTo(newPlaybackPositionSec);
-  });
+  }));
+
+  $(".player__volume").on("click",(e => {
+    const bar = $(e.currentTarget);
+    const clickedPosition = e.originalEvent.layerX;
+    const newButtonPositionPercent = (clickedPosition / bar.width()) * 100;
+    if(player.isMuted()) {
+      player.unMute();
+    }
+    $(".player__volume-button").css({
+      left: `${newButtonPositionPercent}%`
+    });
+
+    player.setVolume(newButtonPositionPercent);
+  }));
+
+  $(".player__sound").on("click",( e => {
+    if(player.isMuted()) {
+      player.unMute();
+      $(".player__volume-button").css({
+        left: `${player.getVolume()}%`
+      });
+    }
+    else {
+      player.mute();
+      $(".player__volume-button").css({
+        left: `${0}%`
+      });
+    }
+  }));
 };
 
 const onPlayerReady = () => {
@@ -308,6 +338,27 @@ const onPlayerReady = () => {
   }, 1000);
 };
 
+const onPlayerStateChange = event => {
+  /*
+    -1 (воспроизведение видео не начато)
+    0 (воспроизведение видео завершено)
+    1 (воспроизведение)
+    2 (пауза)
+    3 (буферизация)
+    5 (видео подают реплики).
+  */
+  switch (event.data) {
+    case 1:
+      playerContainer.addClass("active");
+      playerContainer.addClass("paused");
+      break;
+  
+    case 2:
+      playerContainer.removeClass("active");
+      playerContainer.removeClass("paused");
+      break;
+  }
+ };
 
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('yt-player', {
@@ -316,7 +367,7 @@ function onYouTubeIframeAPIReady() {
     videoId: 'kLppaLNw7d0',
     events: {
       'onReady': onPlayerReady,
-      // 'onStateChange': onPlayerStateChange
+      'onStateChange': onPlayerStateChange
     },
     playerVars: {
       controls: 0,
@@ -482,7 +533,7 @@ $(window).on('keydown', e => {
         break;
   
       case 40: //next
-      scrollViewport('next');
+        scrollViewport('next');
         break;
     }
   }
@@ -491,7 +542,7 @@ $(window).on('keydown', e => {
 //Навигация по секциям
 $('.wrapper').on('touchmove', e => e.preventDefault());
 
-$('[data-scroll-to]').click(e => {
+$('[data-scroll-to]').on("click",(e => {
   e.preventDefault();
 
   const $this = $(e.currentTarget);
@@ -499,20 +550,19 @@ $('[data-scroll-to]').click(e => {
   const reqSection = $(`[data-section-id=${target}]`);
 
   perfomTransition(reqSection.index());
-});
+}));
 
 if (isMobile) {
 //Скролл на мобильных устройствах
 //https://github.com/mattbryson/TouchSwipe-Jquery-Plugin
   $("body").swipe( {
     swipe: function (event, direction,) {
-      const scroller = viewportScroller();
       let = scrollDirection = '';
 
       if (direction === 'up') scrollDirection = 'next';
       if (direction === 'down') scrollDirection = 'prev';
 
-      scroller[scrollDirection]();
+      scrollViewport(scrollDirection);
       }
     });
   }
