@@ -87,3 +87,24 @@
 .paused .player__start {
   background: url(../pictures/icons/pause-svgrepo-com.svg);
 }
+
+.player__splash {
+  display: block;
+  content: url(../pictures/content/splashscreen.png);
+
+  // &::before {
+  //   content: url(../pictures/icons/elementplay.png);
+  // }
+}
+
+.player__elem {
+  display: none;
+}
+
+.active .player__elem {
+  display: block;
+}
+
+.active .player__splash {
+  display: none;
+}

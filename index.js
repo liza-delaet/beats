@@ -364,7 +364,7 @@ function onYouTubeIframeAPIReady() {
   player = new YT.Player('yt-player', {
     height: '100%',
     width: '100%',
-    videoId: 'kLppaLNw7d0',
+    videoId: 'GZ7AHUbdQjk',
     events: {
       'onReady': onPlayerReady,
       'onStateChange': onPlayerStateChange
@@ -554,6 +554,10 @@ $('[data-scroll-to]').on("click",(e => {
   const reqSection = $(`[data-section-id=${target}]`);
 
   perfomTransition(reqSection.index());
+
+  if (Hamburger.classList.contains("showhamburger-menu")) {
+      Hamburger.classList.remove("showhamburger-menu");
+    }
 }));
 
 if (isMobile) {

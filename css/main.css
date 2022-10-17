@@ -1121,6 +1121,11 @@ button {
 .colors-menu__title--red {
   background: #E01F3C;
 }
+@media screen and (max-width: 768px) {
+  .colors-menu__title {
+    width: 90px;
+  }
+}
 .colors-menu__content {
   width: 0px;
   position: relative;
@@ -1359,6 +1364,23 @@ button {
 
 .paused .player__start {
   background: url(../pictures/icons/pause-svgrepo-com.svg);
+}
+
+.player__splash {
+  display: block;
+  content: url(../pictures/content/splashscreen.png);
+}
+
+.player__elem {
+  display: none;
+}
+
+.active .player__elem {
+  display: block;
+}
+
+.active .player__splash {
+  display: none;
 }
 
 .section-delivery {

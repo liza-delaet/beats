@@ -45,6 +45,10 @@
       &--red {
         background: #E01F3C;
       }
+
+      @include tablets {
+        width: 90px;
+      }
     }
 
     &__content {
