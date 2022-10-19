@@ -21,6 +21,10 @@
 
 .why__title {
   margin-bottom: 10px;
+
+  @include tablets {
+    padding: 0 10%;
+  }
 }
 
 .why__subtitle {

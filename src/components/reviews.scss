@@ -1,6 +1,6 @@
 .reviews__display {
   background-color: #F8FAF9;
-  padding: 42px;
+  padding: rem(42px);
   margin-bottom: 15px;
   overflow: hidden;
   position: relative;
@@ -74,7 +74,7 @@
 .reviews__title {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 27px;
+  margin-bottom: rem(27px);
 }
 
 .reviews__author {
