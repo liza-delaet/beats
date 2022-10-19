@@ -1,0 +1,79 @@
+.section-colors {
+  background: url(../pictures/bg/colors.png) center center no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.colors {
+
+  &__title {
+    color: #fff;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+  }
+
+  &-menu {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+
+    &__item {
+      display: flex;
+    }
+
+    &__title {
+      position: relative;
+      width: 100px;
+      writing-mode: vertical-rl;
+      transform: scale(-1);
+      font-size: rem(36px);
+      font-weight: bold;
+      color: #fff;
+      padding: 40px 20px 150px 20px;
+
+      &--grey {
+        background: #999999;
+      }
+
+      &--black {
+        background: #151515;
+      }
+
+      &--red {
+        background: #E01F3C;
+      }
+
+      @include tablets {
+        width: 90px;
+      }
+    }
+
+    &__content {
+      width: 0px;
+      position: relative;
+      overflow: hidden;
+      transition: width .7s;
+
+      &-text {
+        color: #fff;
+      }
+    }
+
+    &__container {
+      padding: rem(40px);
+      background: rgba(51, 53, 55, 0.9);
+      backdrop-filter: blur(5px);
+      height: 100%;
+    }
+
+    &__close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      color: #fff;
+    }
+  }
+}
