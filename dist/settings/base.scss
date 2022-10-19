@@ -67,3 +67,9 @@ button {
   cursor: pointer;
 }
 
+.maincontent {
+  height: 100%;
+  position: relative;
+  transition: transform 1s;
+  will-change: transform;
+}

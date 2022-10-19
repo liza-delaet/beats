@@ -16,6 +16,10 @@
   max-width: 660px;
   margin: 0 auto;
 
+  &__wrapper {
+    height: rem(390px);
+  }
+
   &__controls {
   background: #151515;
   position: absolute;
@@ -27,6 +31,7 @@
   align-items: center;
   padding: 0 25px;
   column-gap: 25px;
+  width: 100%;
   }
 
   &__start {
@@ -78,4 +83,25 @@
 
 .paused .player__start {
   background: url(../pictures/icons/pause-svgrepo-com.svg);
+}
+
+.player__splash {
+  display: block;
+  content: url(../pictures/content/splashscreen.png);
+
+  // &::before {
+  //   content: url(../pictures/icons/elementplay.png);
+  // }
+}
+
+.player__elem {
+  display: none;
+}
+
+.active .player__elem {
+  display: block;
+}
+
+.active .player__splash {
+  display: none;
 }
