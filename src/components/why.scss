@@ -1,6 +1,10 @@
 .why {
   text-align: center;
   margin-bottom: 50px;
+
+  @include tablets {
+    margin-bottom: 25px;
+  }
 }
 
 .section-why {

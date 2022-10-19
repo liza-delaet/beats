@@ -98,10 +98,10 @@
   display: none;
 }
 
-.active .player__elem {
+.player.active .player__elem {
   display: block;
 }
 
-.active .player__splash {
+.player.active .player__splash {
   display: none;
 }

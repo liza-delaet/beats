@@ -12,5 +12,13 @@
     text-transform: uppercase;
     margin-bottom: 40px;
     text-align: center;
+
+    @include tablets {
+      margin-bottom: 20px;
+    }
+
+    @include phones {
+      font-size: rem(32px);
+    }
   }
 }
