@@ -87,11 +87,15 @@
 
 .player__splash {
   display: block;
-  content: url(../pictures/content/splashscreen.png);
-
-  // &::before {
+   // &::before {
   //   content: url(../pictures/icons/elementplay.png);
   // }
+
+  &__img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
 }
 
 .player__elem {
