@@ -274,7 +274,13 @@ let eventsInit = () => {
     playerContainer.addClass("paused");
     player.playVideo();
     }
-  }));  
+  }));
+
+  $(".player__splash").on("click",(e => {
+    e.preventDefault();
+    playerContainer.addClass("paused");
+    player.playVideo();
+  })); 
 
   $(".player__playback").on("click",(e => {
     const bar = $(e.currentTarget);
